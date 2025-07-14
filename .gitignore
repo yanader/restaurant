@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### TODO ###
+src/main/resources/TODO.txt
+
