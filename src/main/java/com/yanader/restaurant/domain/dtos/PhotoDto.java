@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PhotoDTO {
+public class PhotoDto {
     private String url;
     private LocalDateTime uploadDate;
 }
