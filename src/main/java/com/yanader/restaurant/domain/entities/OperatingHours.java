@@ -1,6 +1,5 @@
 package com.yanader.restaurant.domain.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,4 +33,5 @@ public class OperatingHours {
 
     @Field(type = FieldType.Nested)
     private TimeRange sunday;
+
 }

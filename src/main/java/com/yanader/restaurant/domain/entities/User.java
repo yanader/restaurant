@@ -1,5 +1,6 @@
 package com.yanader.restaurant.domain.entities;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,4 @@ public class User {
 
     @Field(type = FieldType.Text)
     private String familyName;
-
-
 }

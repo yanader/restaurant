@@ -1,6 +1,6 @@
 package com.yanader.restaurant.exceptions;
 
-public class StorageException extends BaseException{
+public class StorageException extends BaseException {
 
     public StorageException() {
     }

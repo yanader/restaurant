@@ -33,4 +33,5 @@ public class PhotoServiceImpl implements PhotoService {
     public Optional<Resource> getPhotoAsResource(String id) {
         return storageService.loadAsResource(id);
     }
+
 }

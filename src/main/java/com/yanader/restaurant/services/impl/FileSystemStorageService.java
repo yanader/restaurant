@@ -24,7 +24,7 @@ import java.util.Optional;
 @Slf4j
 public class FileSystemStorageService implements StorageService {
 
-    @Value("$app.storage.location:uploads}")
+    @Value("${app.storage.location:uploads}")
     private String storageLocation;
 
     private Path rootLocation;
@@ -35,14 +35,16 @@ public class FileSystemStorageService implements StorageService {
         try {
             Files.createDirectories(rootLocation);
         } catch (IOException e) {
-            throw new StorageException("Could not initialise storage location", e);
+            throw new StorageException("Could not initialize storage location", e);
         }
     }
 
     @Override
     public String store(MultipartFile file, String filename) {
         try {
-            if(file.isEmpty()) throw new StorageException("Cannot save an empty file");
+            if (file.isEmpty()) {
+                throw new StorageException("Cannot save an empty file");
+            }
 
             String extension = StringUtils.getFilenameExtension(file.getOriginalFilename());
             String finalFileName = filename + "." + extension;
@@ -52,11 +54,11 @@ public class FileSystemStorageService implements StorageService {
                     .normalize()
                     .toAbsolutePath();
 
-            if(!destinationFile.getParent().equals(rootLocation.toAbsolutePath())) {
+            if (!destinationFile.getParent().equals(rootLocation.toAbsolutePath())) {
                 throw new StorageException("Cannot store file outside specified directory");
             }
 
-            try(InputStream inputStream = file.getInputStream()) {
+            try (InputStream inputStream = file.getInputStream()) {
                 Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
             }
 
@@ -65,6 +67,7 @@ public class FileSystemStorageService implements StorageService {
         } catch(IOException e) {
             throw new StorageException("Failed to store file", e);
         }
+
     }
 
     @Override
@@ -74,7 +77,7 @@ public class FileSystemStorageService implements StorageService {
 
             Resource resource = new UrlResource(file.toUri());
 
-            if(resource.exists() || resource.isReadable()) {
+            if (resource.exists() || resource.isReadable()) {
                 return Optional.of(resource);
             } else {
                 return Optional.empty();
@@ -84,4 +87,5 @@ public class FileSystemStorageService implements StorageService {
             return Optional.empty();
         }
     }
+
 }

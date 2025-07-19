@@ -1,6 +1,6 @@
 package com.yanader.restaurant.exceptions;
 
-public class BaseException extends RuntimeException{
+public class BaseException extends RuntimeException {
 
     public BaseException() {
     }
@@ -16,4 +16,5 @@ public class BaseException extends RuntimeException{
     public BaseException(Throwable cause) {
         super(cause);
     }
+
 }

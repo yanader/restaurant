@@ -13,9 +13,9 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Builder
 public class TimeRange {
 
-    @Field(type= FieldType.Keyword)
+    @Field(type = FieldType.Keyword)
     private String openTime;
 
-    @Field(type= FieldType.Keyword)
+    @Field(type = FieldType.Keyword)
     private String closeTime;
 }

@@ -38,4 +38,5 @@ public class Review {
 
     @Field(type = FieldType.Nested)
     private User writtenBy;
+
 }
