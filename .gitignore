@@ -35,3 +35,5 @@ build/
 ### TODO ###
 src/main/resources/TODO.txt
 
+### Uplods ###
+uploads/*
