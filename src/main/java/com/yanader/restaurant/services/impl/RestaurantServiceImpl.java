@@ -40,7 +40,7 @@ public class RestaurantServiceImpl implements RestaurantService {
                 .contactInformation(request.getContactInformation())
                 .address(address)
                 .geoLocation(geoPoint)
-                .operatingHours(request.getOperatingHouse())
+                .operatingHours(request.getOperatingHours())
                 .averageRating(0f)
                 .photos(photos)
                 .build();
