@@ -2,11 +2,12 @@ package com.yanader.restaurant.repositories;
 
 import com.yanader.restaurant.domain.entities.Restaurant;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
-import java.awt.print.Pageable;
+
 
 @Repository
 public interface RestaurantRepository extends ElasticsearchRepository<Restaurant, String> {
